@@ -1,0 +1,15 @@
+---
+version: "3.8"
+services:
+  front:
+    image: todo_list_front:0.0.3
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+  backend:
+    image: todo_list_backend:0.0.1
+    ports:
+      - "3003:3003"
+    volumes:
+      - /Users/nucsemin/Desktop/Уроки/Mentoring/server/db/db.json:/tmp/app/db/db.json
